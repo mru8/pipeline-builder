@@ -10,7 +10,7 @@ export const DraggableNode = ({ type, label }) => {
   
     return (
       <div
-        className={type}
+        className='node-btn'
         onDragStart={(event) => onDragStart(event, type)}
         onDragEnd={(event) => (event.target.style.cursor = 'grab')}
         style={{ 

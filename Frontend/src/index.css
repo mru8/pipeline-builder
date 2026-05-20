@@ -1,10 +1,19 @@
+:root{
+  --toolbar-1: #c2a8eb;
+  --toolbar-2: #2f1d4d;
+  --canvas-bg: #02030f;
+  --node-bg: #101a2d;
+  --node-hover: #17253d;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent: #8b5cf6;
+  --text-main: #f5f7ff;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--toolbar-1);
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
@@ -12,44 +21,134 @@ code {
     monospace;
 }
 
-.react-flow__node {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.2s ease;
+.toolbar {
+    margin-bottom: 1px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(36, 21, 61, 0.82),
+            rgba(47, 29, 77, 0.72)
+        );
+
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.45);
+
+    padding: 22px 0;
+    position: relative;
 }
 
-.react-flow__handle {
-  width: 10px;
-  height: 10px;
-  background-color: #555;
-  border: 2px solid white;
+/* .toolbar::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.18),
+    transparent  
+  );
+  pointer-events: none;
+} */
+
+.node-btn{
+  background: 
+    linear-gradient(
+      145deg,
+      #16233b,
+      #101827
+    );
+  border: 1px solid rgba(139,92,246,0.12);
+  box-shadow: 
+    0 6px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.node-btn:hover{
+  transform: translateY(-4px);
+  background: 
+    linear-gradient(
+      145deg,
+      #1b2d4b,
+      #152238
+    );
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(139, 92, 246, 0.18);
+  }
+
+.react-flow__node {
+  background: #a4b2be;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 3px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
+  font-size: 12px;
+}
+
+.react-flow__node.selected{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
+}
+
+/* the handles */
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background-color: #cbd5e0;
+  border: 2px solid #ffffff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .react-flow__handle:hover{
-  background-color: #007bff;
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  transform: scale(1.4);
-  cursor: crosshair;
-  border-color: #fff;
+  background-color: var(--accent);
+  /* transform: scale(1.5);
+  border-color: #eff6ff; */
+}
+
+.react-flow__background{
+  background-color: #02030f;
+}
+
+.react-flow__minimap{
+  background-color: #ffffff !important;
+  border: 2px solid #b4b6ba !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 }
 
 .submit-button {
-  background-color: #1a192b;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 600;
+  /* background: var(--node-bg); */
+  background: var(--toolbar-2);
+  /* background-color: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); */
+  color: #f8fafc;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s active;
-  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(29, 29, 32, 0.4);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .submit-button:hover{
-  background-color: #3b3a50;
-  transform: translateY(-1px);
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(68, 68, 70, 0.6);
+  background: var(--node-bg);
 }
 
 .submit-button:active{
@@ -57,20 +156,37 @@ code {
 }
 
 .draggable-node {
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 8px 12px;
+  border: 1px solid #dfe0e1;
+  border-radius: 8px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 80px;
-  background: white;
-  font-size: 14px;
-  color: #4a5568;
+  min-width: 90px;
+  background: #1a202c;
+  font-size: 13px;
+  font-weight: 500;
+  color: #edf2f7;
   cursor: grab;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .draggable-node:hover{
-  border-color: #a0aec0;
-  background: #f7fafc;
+  border-color: #4a5568;
+  background: #2d3748;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* vertical layout for sidebar */
+.toolbar-container{
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
 }
