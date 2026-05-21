@@ -16,7 +16,7 @@ export const SubmitButton = () => {
         formData.append('edges', JSON.stringify(edges));
 
         try{
-            const response = await fetch('https://pipeline-builder-3rk9.onrender.com/', {
+            const response = await fetch('https://pipeline-builder-3rk9.onrender.com/pipelines/parse', {
                 method: 'POST',
                 body: formData,
             });
