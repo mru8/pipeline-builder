@@ -150,8 +150,8 @@ code {
 
 .react-flow__handle:hover{
   background-color: var(--accent);
-  /* transform: scale(1.5);
-  border-color: #eff6ff; */
+  transform: scale(1.5);
+  border-color: #eff6ff;
 }
 
 .react-flow__background{
@@ -167,9 +167,8 @@ code {
 }
 
 .submit-button {
-  /* background: var(--node-bg); */
   background: var(--toolbar-2);
-  /* background-color: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); */
+  background-color: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: #f8fafc;
   padding: 12px 24px;
   border-radius: 10px;
@@ -187,11 +186,12 @@ code {
 .submit-button:hover{
   transform: translateX(-50%) translateY(-2px);
   box-shadow: 0 6px 20px rgba(68, 68, 70, 0.6);
-  background: var(--node-bg);
+  background: var(--text-main);
+  color: var(--canvas-bg);
 }
 
 .submit-button:active{
-  transform: translateY(1px);
+  transform: translateX(-50%) translateY(1px);
 }
 
 .draggable-node {
