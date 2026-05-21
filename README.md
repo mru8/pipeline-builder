@@ -3,8 +3,8 @@
  I built a flow-based pipeline editor where you can drag and drop nodes, connect them, and then check if the whole thing actually works!
 
 ## Working
-[![No loop and dynamic text node]](videos/pipe1v.mp4)
-[![Loop in pipeline]](videos/pipe2v.mp4)
+[[No loop and dynamic text node]](videos/v1.mp4)
+[[Loop in pipeline]](videos/v2.mp4)
 
 ## 🛠️ What's inside?
 
