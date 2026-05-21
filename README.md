@@ -1,6 +1,7 @@
 # My Pipeline Builder Project 🚀
+**Live Demo**: https://pipeline-builder-9w7z.vercel.app/
 
- I built a flow-based pipeline editor where you can drag and drop nodes, connect them, and then check if the whole thing actually works!
+A visual pipeline builder for creating and validating DAG workflows
 
 ## Working
 [[No loop and dynamic text node]](videos/v1.mp4)
