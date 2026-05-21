@@ -3,10 +3,6 @@
 
 A visual pipeline builder for creating and validating DAG workflows
 
-## Working
-[[No loop and dynamic text node]](videos/v1.mp4)
-[[Loop in pipeline]](videos/v2.mp4)
-
 ## 🛠️ What's inside?
 
 I spent time making sure the app is both easy to use and smart enough to catch mistakes. Here’s what I did:
