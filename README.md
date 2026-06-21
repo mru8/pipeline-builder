@@ -2,14 +2,9 @@
 
 A visual workflow editor for designing and validating data pipelines through a drag-and-drop interface. Built to catch configuration errors — like circular dependencies — before they ever reach runtime.
 
-<!-- 
-  TODO: Add a screen recording here. A 10-15s GIF showing:
-  1. Dragging nodes onto canvas
-  2. Connecting them
-  3. Triggering the cycle-detection error
-  This single GIF will do more for this README than any paragraph of text.
-  ![Pipeline Builder Demo](./demo.gif)
--->
+
+![Pipeline Builder Demo](./videos/loop.gif)
+
 
 **[Live Demo →](https://pipeline-builder-9w7z.vercel.app/)**
 
